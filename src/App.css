@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #253053;
+  border-radius: 1rem;
+}
+
+:root {
+  --primary-color: #786591;
+  --background-color: #191921;
+  --dark-background-color: #121212;
+  --white-text: #e0e0e0;
+  --secondary-text-color: #8a9fac;
+  --primary-hover: #5d4c74;
+  --smooth-shadow: 0px 0px 10px 4px rgb(0 0 0 / 5%);
+  --border-color: rgba(206, 204, 204, 0.328);
+  --secondary-text: #909090;
+  --tools-bg: rgba(104, 76, 109, 0.76);
+  --video-bg: #070d1b;
+}
