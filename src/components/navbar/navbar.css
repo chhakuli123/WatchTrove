@@ -1,0 +1,51 @@
+/* Navbar styles */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0.2rem;
+}
+
+/* Logo styles */
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-image {
+  height: 3rem;
+  margin-right: 10px;
+}
+
+.navbar-logo-text {
+  font-weight: bold;
+  color: var(--white-text);
+  font-size: 2rem;
+}
+
+/* Login button styles */
+.navbar-button-container {
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  margin-right: 0.3rem;
+}
+
+.navbar-login-button {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.4rem;
+  border-radius: 10rem;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  color: var(--white-text);
+  border: none;
+}
+.navbar-login-button:hover {
+  background-color: var(--primary-hover);
+}
