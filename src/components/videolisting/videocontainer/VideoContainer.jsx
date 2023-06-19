@@ -1,11 +1,25 @@
 import React from "react";
-
 import { useData } from "context";
+
 import { VideoCard } from "../videocard/VideoCard";
-import "./videocontainer.css"
+import "./videocontainer.css";
 
 const VideoContainer = () => {
-  const { state } = useData();
+  const { state, dispatch } = useData();
+
+  const handleCategoryClick = (categoryName) => {
+    dispatch({ type: "CATEGORY", payload: { categoryName } });
+  };
+
+  function filteredVideos() {
+    let filteredVideos = [];
+    if (state.category === "All") filteredVideos = state.videos;
+    else
+      filteredVideos = state.videos.filter(
+        (perVideo) => perVideo.categoryName === state.category
+      );
+    return filteredVideos;
+  }
 
   return (
     <>
@@ -15,9 +29,10 @@ const VideoContainer = () => {
             className={`category-btn ${
               category.categoryName === state.category
                 ? "active-category"
-                : null
+                : ""
             }`}
             key={category._id}
+            onClick={() => handleCategoryClick(category.categoryName)}
           >
             {category.categoryName}
           </span>
@@ -25,11 +40,11 @@ const VideoContainer = () => {
       </div>
 
       <div className="video-container">
-        {state.videos.map((video) => (
-          <VideoCard video={video} key={video._id}></VideoCard>
+        {filteredVideos().map((video) => (
+          <VideoCard video={video} key={video._id} />
         ))}
       </div>
-  </>
+    </>
   );
 };
 

@@ -8,6 +8,11 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
+    categoryName: "All",
+    description: "All Videos",
+  },
+  {
+    _id: uuid(),
     categoryName: "Health",
     description:
       "Health is a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.",
