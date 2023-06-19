@@ -30,14 +30,13 @@
   border-radius: 1rem;
 }
 :root {
-  --primary-color: #786591;
-  --secondary-color: #1a202c;
-  --background-color: #191921;
   --dark-background-color: #121212;
-  --white-text: #e0e0e0;
-  --primary-hover: #5d4c74;
-  --border-color: rgba(206, 204, 204, 0.328);
+  --background-color: #191921;
+  --primary-color: #dabdff;
+  --secondary-color: #1a202c;
+  --white-text: hsla(0, 0%, 100%, 0.87);
   --secondary-text: #909090;
+  --primary-hover: #2d2d3a;
+  --border-color: rgba(104, 97, 97, 0.328);
   --tools-bg: rgba(104, 76, 109, 0.76);
-  --video-bg: #070d1b;
 }

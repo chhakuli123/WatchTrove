@@ -2,18 +2,18 @@
 .video-categories {
   display: flex;
   margin-left: 12.2rem;
-  background-color: var(--secondary-color);
+  background-color: var(--dark-background-color);
   overflow-x: auto;
   white-space: nowrap;
 }
 
 .category-btn {
   display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border-radius: 1rem;
-  background-color: var(--primary-color);
+  padding: 0.4rem 1.5rem;
+  border-radius: 2rem;
+  background-color: var(--primary-hover);
   color: var(--white-text);
-  margin: 0.8rem 1.2rem;
+  margin: 1.5rem 1.2rem 0.8rem 1.2rem;
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: bold;
@@ -21,7 +21,7 @@
 }
 
 .active-category {
-  background-color: var(--secondary-text);
+  background-color: var(--primary-color);
   color: var(--dark-background-color);
 }
 
@@ -30,7 +30,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin-left: 12.2rem;
-  background-color: var(--secondary-color);
+  padding: 0 1.5rem;
+  background-color: var(--dark-background-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -44,6 +45,7 @@
 
   .video-container {
     margin-left: 0rem;
+    padding: 0 0rem;
   }
 
   /* Custom scrollbar styles */
