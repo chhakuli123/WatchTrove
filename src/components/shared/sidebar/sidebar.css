@@ -1,0 +1,79 @@
+.desktop-sidebar {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 4rem;
+  width: 10rem;
+  padding: 1.2rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu-item {
+  margin-bottom: 1.2rem;
+}
+
+.sidebar-menu-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--white-text);
+  font-size: 1rem;
+  margin: 2rem 0;
+}
+
+.sidebar-menu-icon {
+  margin-right: 0.5rem;
+  font-size: 1.7rem;
+  color: var(--white-text);
+}
+
+.sidebar-menu-item a:hover {
+  color: var(--primary-hover);
+}
+
+/* Styles for mobile bottom bar */
+.mobile-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: var(--background-color);
+  display: none;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+  border-top: 2px solid var(--border-color);
+}
+
+.mobile-bottom-bar-item {
+  flex: 1;
+  text-align: center;
+  list-style: none;
+}
+
+.mobile-bottom-bar-item .mobile-bottom-bar-icon {
+  font-size: 2rem;
+  color: var(--white-text);
+}
+
+.mobile-bottom-bar-icon:hover {
+  color: var(--primary-hover);
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-sidebar {
+    display: none;
+  }
+  .mobile-bottom-bar {
+    display: flex;
+  }
+}
