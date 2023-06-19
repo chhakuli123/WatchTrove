@@ -12,7 +12,7 @@ function App() {
     <div className="App pagewrapper">
       <Toaster />
       {pathname !== "/" && <Topbar />}
-      <Sidebar />
+      {pathname !== "/" && <Sidebar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
