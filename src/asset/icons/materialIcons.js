@@ -16,7 +16,8 @@ import PlaylistAddOutlinedIcon from "@mui/icons-material/PlaylistAddOutlined";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
-import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 export {
   LoginIcon,
   LogoutIcon,
@@ -36,5 +37,6 @@ export {
   FileUploadOutlinedIcon,
   HistoryOutlinedIcon,
   MoreVertOutlinedIcon,
-  VerifiedOutlinedIcon,
+  CheckCircleIcon,
+  FiberManualRecordIcon,
 };
