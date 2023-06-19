@@ -1,0 +1,121 @@
+.video-card {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 0.1rem;
+  background-color: var(--background-color);
+  color: var(--white-text);
+}
+
+.video-thumbnail {
+  border-radius: 0.3rem;
+  height: 10rem;
+}
+@media screen and (max-width: 767px) {
+  .video-thumbnail {
+    height: 13rem;
+  }
+}
+.card-content {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--white-text);
+}
+
+.card-head img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.btn-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+
+.tools {
+  position: absolute;
+  right: 0.2rem;
+  bottom: 9rem;
+  display: none;
+}
+
+.tools button {
+  margin: 0 0.2rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  background-color: var(--tools-bg);
+  transition: 0.3s ease-in;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white-text);
+  cursor: pointer;
+}
+
+.tools button:hover {
+  background-color: var(--primary-hover);
+}
+
+.icons.card-icon {
+  color: var(--white-text);
+  font-size: 1.5rem;
+  margin: 0.7rem 0rem 0 0.1rem;
+  cursor: pointer;
+}
+
+.creator-title {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+  color: var(--white-text);
+}
+
+.creator-title .icons {
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+  color: #2ea3da;
+}
+
+.creator-timestamp {
+  color: var(--secondary-text);
+  margin: 0.9rem 0 0.1rem 0;
+}
+.creator-timestamp .icons {
+  font-size: 0.5rem;
+  color: #2ea3da;
+  margin-left: 0.1rem;
+}
+
+.video-description {
+  margin-bottom: 0.5rem;
+  color: var(--secondary-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
