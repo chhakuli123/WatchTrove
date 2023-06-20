@@ -33,7 +33,7 @@ const Topbar = () => {
         <div className="topbar-right">
           <div className="topbar-icons">
             <LightModeOutlinedIcon />
-            <PersonOutlineOutlinedIcon />
+            <PersonOutlineOutlinedIcon onClick={() => navigate("/profile")}/>
           </div>
         </div>
       </nav>

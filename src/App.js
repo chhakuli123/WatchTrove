@@ -5,6 +5,7 @@ import { Explore, Home } from "pages";
 import {
   Footer,
   LoginForm,
+  PrivateRoute,
   Profile,
   Sidebar,
   SignupForm,
@@ -19,7 +20,8 @@ function App() {
   return (
     <div className="App pagewrapper">
       <ScrollToTop />
-      <Toaster position="top-center" autoClose={1000} />
+      <Toaster position="top-center" autoClose={2000} />
+
       {pathname !== "/" && <Topbar />}
       {pathname !== "/" && <Sidebar />}
 
@@ -28,7 +30,10 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/profile" element={<Profile />} />
+
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
 
       {pathname !== "/" && <Footer />}
