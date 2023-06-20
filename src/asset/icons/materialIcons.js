@@ -18,6 +18,9 @@ import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 export {
   LoginIcon,
   LogoutIcon,
@@ -39,4 +42,7 @@ export {
   MoreVertOutlinedIcon,
   CheckCircleIcon,
   FiberManualRecordIcon,
+  ErrorOutlineOutlinedIcon,
+  RemoveRedEyeOutlinedIcon,
+  VisibilityOffOutlinedIcon,
 };

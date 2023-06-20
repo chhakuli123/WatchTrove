@@ -19,4 +19,7 @@ export {
   CheckCircleIcon,
   FiberManualRecordIcon,
   MoreVertOutlinedIcon,
+  ErrorOutlineOutlinedIcon,
+  RemoveRedEyeOutlinedIcon,
+  VisibilityOffOutlinedIcon,
 } from "./icons/materialIcons";
