@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
+import { LoginIcon, LogoutIcon } from "asset";
+import { useAuth } from "context";
 import "./navbar.css";
-import { LoginIcon } from "asset";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { isAuth, logoutHandler } = useAuth();
 
   return (
     <nav className="navbar-container">
@@ -17,14 +19,20 @@ const Navbar = () => {
         />
         <h3 className="navbar-logo-text">WatchTrove</h3>
       </div>
-      
+
       <div className="navbar-button-container">
-        <button
-          className="navbar-login-button"
-          onClick={() => navigate("/login")}
-        >
-          <LoginIcon/> Login
-        </button>
+        {isAuth ? (
+          <button className="navbar-login-button" onClick={logoutHandler}>
+            <LogoutIcon /> Logout
+          </button>
+        ) : (
+          <button
+            className="navbar-login-button"
+            onClick={() => navigate("/login")}
+          >
+            <LoginIcon /> Login
+          </button>
+        )}
       </div>
     </nav>
   );
