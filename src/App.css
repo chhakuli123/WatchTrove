@@ -32,11 +32,13 @@
 :root {
   --dark-background-color: #121212;
   --background-color: #191921;
-  --primary-color: #dabdff;
+  --primary-color: #9e83c2;
   --secondary-color: #1a202c;
   --white-text: hsla(0, 0%, 100%, 0.87);
   --secondary-text: #909090;
-  --primary-hover: #2d2d3a;
+  --primary-hover: #a18fb8;
   --border-color: rgba(104, 97, 97, 0.328);
   --tools-bg: rgba(104, 76, 109, 0.76);
+  --boxshadow-color: rgba(0, 0, 0, 0.3);
+  --danger: #f44336;
 }
