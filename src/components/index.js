@@ -5,3 +5,7 @@ export { Footer } from "./shared/footer/Footer";
 export { Sidebar } from "./shared/sidebar/Sidebar";
 export { VideoCard } from "./videolisting/videocard/VideoCard";
 export { VideoContainer } from "./videolisting/videocontainer/VideoContainer";
+export { SignupForm } from "./authentication/signup-form/SignupForm";
+export { LoginForm } from "./authentication/LoginForm";
+export { Profile } from "./authentication/profile/Profile";
+export { PrivateRoute } from "./authentication/PrivateRoute";
