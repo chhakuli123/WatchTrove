@@ -22,4 +22,7 @@ export {
   ErrorOutlineOutlinedIcon,
   RemoveRedEyeOutlinedIcon,
   VisibilityOffOutlinedIcon,
+  DeleteIcon,
+  ThumbUpOffAltIcon,
+  ThumbUpAltIcon,
 } from "./icons/materialIcons";
