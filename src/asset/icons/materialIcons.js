@@ -21,6 +21,9 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
+import DeleteIcon from "@mui/icons-material/Delete";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 export {
   LoginIcon,
   LogoutIcon,
@@ -45,4 +48,7 @@ export {
   ErrorOutlineOutlinedIcon,
   RemoveRedEyeOutlinedIcon,
   VisibilityOffOutlinedIcon,
+  DeleteIcon,
+  ThumbUpOffAltIcon,
+  ThumbUpAltIcon,
 };
