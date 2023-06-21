@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-import { Explore, Home } from "pages";
+import { Explore, Home, Likes } from "pages";
 import {
   Footer,
   LoginForm,
@@ -11,8 +11,8 @@ import {
   SignupForm,
   Topbar,
 } from "components";
-import "./App.css";
 import { ScrollToTop } from "utils";
+import "./App.css";
 
 function App() {
   const { pathname } = useLocation();
@@ -33,6 +33,7 @@ function App() {
 
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/likedvideos" element={<Likes />} />
         </Route>
       </Routes>
 
