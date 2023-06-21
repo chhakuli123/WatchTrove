@@ -5,7 +5,11 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { AuthProvider, DataContextProvider } from "context";
+import {
+  AuthProvider,
+  DataContextProvider,
+  LikesContextProvider,
+} from "context";
 
 // Call make Server
 makeServer();
@@ -15,7 +19,9 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <DataContextProvider>
-          <App />
+          <LikesContextProvider>
+            <App />
+          </LikesContextProvider>
         </DataContextProvider>
       </AuthProvider>
     </BrowserRouter>
