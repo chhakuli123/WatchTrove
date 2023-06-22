@@ -7,8 +7,8 @@ import { kFormatter } from "utils";
 
 export const videos = [
   {
-    _id: "b-n5H-jpSLc&t=3s",
-    videoLink: "https://www.youtube.com/watch?v=b-n5H-jpSLc&t=3s",
+    _id: "b-n5H-jpSLc",
+    videoLink: "https://www.youtube.com/watch?v=b-n5H-jpSLc",
     title: "इस Diet Plan -- से किसी भी बीमारी का इलाज संभव",
     description:
       "इस वीडियो में दिए गए डाइट प्लान का पालन कर के आप कोई भी बीमारी जड़ से ठीक कर सकते है।",
@@ -67,8 +67,8 @@ export const videos = [
     categoryName: "Yoga",
   },
   {
-    videoLink: "https://www.youtube.com/watch?v=lJZW0Dkbf3I",
     _id: "lJZW0Dkbf3I",
+    videoLink: "https://www.youtube.com/watch?v=lJZW0Dkbf3I",
     title: "Cancer Loves Sugar! - WATCH THIS To Prevent Disease",
     description:
       "HEAL THE BODY: What To Eat & When To Eat To STARVE CANCER | Dr. William Li",
@@ -82,8 +82,8 @@ export const videos = [
     categoryName: "Health",
   },
   {
-    videoLink: "https://www.youtube.com/watch?v=E3QpXj_QOqQ",
     _id: "E3QpXj_QOqQ",
+    videoLink: "https://www.youtube.com/watch?v=E3QpXj_QOqQ",
     title: "The Science of Gut Health (& Why It Matters)",
     description:
       "So this video is all about the science of gut health and what we can do to look after it. Enjoy x",
@@ -98,8 +98,8 @@ export const videos = [
   },
 
   {
-    _id: "FdyhENXyIQ4&t=289s",
-    videoLink: "https://www.youtube.com/watch?v=FdyhENXyIQ4&t=289s",
+    _id: "FdyhENXyIQ4",
+    videoLink: "https://www.youtube.com/watch?v=FdyhENXyIQ4",
     title: "Yoga for Beginners | Easy & relaxing flow |",
     description:
       "This is a seated flow that you can practice on your yoga mat or even a carpet. The simple asanas will allow you to bring your awareness to the present moment and help you let go of any stressful thoughts. 💭💭",
@@ -129,8 +129,8 @@ export const videos = [
     categoryName: "Songs",
   },
   {
-    _id: "PEmaWdfUUuk&t=154s",
-    videoLink: "https://www.youtube.com/watch?v=PEmaWdfUUuk&t=154s",
+    _id: "PEmaWdfUUuk",
+    videoLink: "https://www.youtube.com/watch?v=PEmaWdfUUuk",
     title: "Searching For Light with Radhanath Swami |",
     description:
       "Today His Holiness Radhanath Swami shares his thoughts with Rich Roll on compassion, unity, and the importance of having a spiritual practice.",
@@ -237,8 +237,8 @@ export const videos = [
     categoryName: "Fasting",
   },
   {
-    _id: "TEMv5X4ohII&t=948s",
-    videoLink: "https://www.youtube.com/watch?v=TEMv5X4ohII&t=948s",
+    _id: "TEMv5X4ohII",
+    videoLink: "https://www.youtube.com/watch?v=TEMv5X4ohII",
     title: "The Scary New Research On Sugar",
     description:
       "In this episode, Steven interviews Jessie Inchauspé, a French biochemist and bestselling author. After breaking her back at 19, Jessie became interested in achieving optimal health.",
@@ -252,8 +252,8 @@ export const videos = [
     categoryName: "Podcasts",
   },
   {
-    _id: "EVcVr2asVzI&t=4256s",
-    videoLink: "https://www.youtube.com/watch?v=EVcVr2asVzI&t=4256s",
+    _id: "EVcVr2asVzI",
+    videoLink: "https://www.youtube.com/watch?v=EVcVr2asVzI",
     title: "Jaya Kishori - Krishna, Mantra Aur Detachment",
     description:
       "इस Podcast में हम बात करेंगे इनकी Early Life, Bhajan का मतलब, Previous जन्म के Karma, Shrimad Bhaagwad Puraan कौनसा ग्रंथ है, Prem का असली Matlab, और Selfless Love के बारे में।",
@@ -267,8 +267,8 @@ export const videos = [
     categoryName: "Podcasts",
   },
   {
-    videoLink: "https://www.youtube.com/watch?v=zz4ZzNik1Y4",
     _id: "zz4ZzNik1Y4",
+    videoLink: "https://www.youtube.com/watch?v=zz4ZzNik1Y4",
     title: "The Secret Power of Fasting | for Longevity and Healing",
     description:
       "These days, we hear a lot about fasting. Intermittent fasting, time-restricted eating, and water fasting are just some of the many terms being thrown around in support of better health.",
@@ -297,8 +297,8 @@ export const videos = [
     categoryName: "Health",
   },
   {
-    _id: "yaWVflQolmM&t=3080s",
-    videoLink: "https://www.youtube.com/watch?v=XuFDcZABiDQ",
+    _id: "yaWVflQolmM",
+    videoLink: "https://www.youtube.com/watch?v=yaWVflQolmM",
     title: "The Insane Benefits of Water-Only Fasting",
     description:
       "Today we talk all things water fasting, food addiction, whole plant diets, and the power of the body to heal.",
@@ -313,8 +313,8 @@ export const videos = [
   },
 
   {
-    _id: "eUDTHzCw5YE&t=200s",
-    videoLink: "https://www.youtube.com/watch?v=eUDTHzCw5YE&t=200s",
+    _id: "eUDTHzCw5YE",
+    videoLink: "https://www.youtube.com/watch?v=eUDTHzCw5YE",
     title: "25 minute Yoga for relaxation Satvic Yoga",
     description:
       "You will also learn the Ashtanga Yoga Philosophy through stories, analogies and activities and also practice healthy lifestyle and food habits everyday!",
@@ -342,8 +342,8 @@ export const videos = [
     categoryName: "Songs",
   },
   {
-    _id: "ncgz1z7-qx4&t=41s",
-    videoLink: "https://www.youtube.com/watch?v=ncgz1z7-qx4&t=41s",
+    _id: "ncgz1z7-qx4",
+    videoLink: "https://www.youtube.com/watch?v=ncgz1z7-qx4",
     title: "20 Minute Yoga for Relieving Back Pain | Beginner | Hindi",
     description:
       "If you sit and work for long hours or drive, you may feel the aches and soreness in the back. This is due to the compression of the spinal cord in between the vertebrae.",
@@ -357,8 +357,8 @@ export const videos = [
     categoryName: "Yoga",
   },
   {
-    _id: "5RT4qIO27uw&t=44s",
-    videoLink: "https://www.youtube.com/watch?v=5RT4qIO27uw&t=44s",
+    _id: "5RT4qIO27uw",
+    videoLink: "https://www.youtube.com/watch?v=5RT4qIO27uw",
     title: "How To REVERSE YOUR AGE With WATER FASTING",
     description:
       "Are you looking for an alternative, cutting-edge way of attacking the root cause of your pains, aches, inflammation, and health problems? Do you want a total detox of your body? Whether you’re new to fasting or have many years of experience under your belt, these are the key fasting tips you need to know to take your health to the next level. ",
@@ -372,8 +372,8 @@ export const videos = [
     categoryName: "Fasting",
   },
   {
-    videoLink: "https://www.youtube.com/watch?v=SxSRxTvhCec",
     _id: "SxSRxTvhCec",
+    videoLink: "https://www.youtube.com/watch?v=SxSRxTvhCec",
     title: "20 Minute Yogasana flow for weight loss",
     description:
       "https://yogachallenge.in/wly - Learn asanas step by step and go deeper into the yoga philosophy, join us for the upcoming 21 Day Yoga Challenge.",
