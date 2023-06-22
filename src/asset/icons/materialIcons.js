@@ -24,6 +24,7 @@ import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined
 import DeleteIcon from "@mui/icons-material/Delete";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 export {
   LoginIcon,
   LogoutIcon,
@@ -51,4 +52,5 @@ export {
   DeleteIcon,
   ThumbUpOffAltIcon,
   ThumbUpAltIcon,
+  YoutubeSearchedForIcon,
 };
