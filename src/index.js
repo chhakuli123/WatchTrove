@@ -9,6 +9,7 @@ import {
   AuthProvider,
   DataContextProvider,
   LikesContextProvider,
+  WatchLaterContextProvider,
 } from "context";
 
 // Call make Server
@@ -20,7 +21,9 @@ ReactDOM.render(
       <AuthProvider>
         <DataContextProvider>
           <LikesContextProvider>
-            <App />
+            <WatchLaterContextProvider>
+              <App />
+            </WatchLaterContextProvider>
           </LikesContextProvider>
         </DataContextProvider>
       </AuthProvider>
