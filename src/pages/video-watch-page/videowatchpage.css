@@ -1,0 +1,117 @@
+.watch-page {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 2rem 1rem 3.5rem;
+  margin-left: 12.2rem;
+}
+
+.watch-page-video-container {
+  flex: 2;
+}
+
+.video-frame {
+  width: 100%;
+  height: 28rem;
+  border: none;
+}
+
+.watch-page-video-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.watch-page-video-title {
+  font-size: 1.6rem;
+  color: var(--white-text);
+  margin: 0;
+}
+
+.watch-page-creator-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white-text);
+}
+
+.watch-page-creator-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.watch-page-video-description {
+  font-size: 1rem;
+  color: var(--secondary-text);
+  margin: 0;
+}
+
+.watch-page-video-stats {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--white-text);
+  gap: 0.8rem;
+}
+.watch-page-icons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.watch-page-icon-button {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 2rem;
+  margin-right: 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--primary-hover);
+  color: var(--white-text);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.watch-page-related-video-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.related-videos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.related-videos-heading {
+  font-size: 1.3rem;
+  color: var(--white-text);
+}
+
+@media screen and (max-width: 768px) {
+  .watch-page {
+    flex-direction: column;
+    padding: 2.8rem 1rem;
+    margin-left: 0rem;
+  }
+
+  .watch-page-video-container {
+    margin-bottom: 2rem;
+  }
+
+  .video-frame {
+    height: 15rem;
+  }
+  .watch-page-icon-button {
+    padding: 0.3rem 1rem;
+    margin: 0.5rem 0.5rem 0rem 0rem;
+    font-size: 1rem;
+  }
+  .related-videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .related-videos-container {
+    width: 100%;
+  }
+}

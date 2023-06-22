@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-import { Explore, Home, Likes } from "pages";
+import { Explore, Home, Likes, VideoWatchPage } from "pages";
 import {
   Footer,
   LoginForm,
@@ -30,6 +30,7 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/watchpage/:videoId" element={<VideoWatchPage />} />
 
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
