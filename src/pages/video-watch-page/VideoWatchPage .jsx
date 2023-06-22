@@ -1,13 +1,19 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { useAuth, useData, useLikesContext } from "context";
+import {
+  useAuth,
+  useData,
+  useLikesContext,
+  useWatchLaterContext,
+} from "context";
 import { VideoCard } from "components";
 import {
   CheckCircleIcon,
   PlaylistAddOutlinedIcon,
   ThumbUpAltIcon,
   ThumbUpOffAltIcon,
+  WatchLaterIcon,
   WatchLaterOutlinedIcon,
 } from "asset";
 import "./videowatchpage.css";
@@ -18,11 +24,10 @@ const VideoWatchPage = () => {
 
   const { state } = useData();
   const { isAuth } = useAuth();
-  const { state: likesState, saveLikedVideo } = useLikesContext(); // Update variable name to avoid naming conflict
+  const { state: likesState, saveLikedVideo } = useLikesContext();
+  const { state: watchLaterState, addToWatchLater } = useWatchLaterContext();
 
-  const selectedVideo = state.videos.find(
-    (video) => video._id === videoId
-  );
+  const selectedVideo = state.videos.find((video) => video._id === videoId);
 
   if (!selectedVideo) {
     return null;
@@ -35,27 +40,29 @@ const VideoWatchPage = () => {
     creator,
     view,
     timeStamp,
-    categoryName, 
+    categoryName,
   } = selectedVideo;
 
   // Filter related videos by the selected video's category
   const relatedVideos = state.videos.filter(
-    (video) =>
-      video.categoryName === categoryName && video._id !== videoId
+    (video) => video.categoryName === categoryName && video._id !== videoId
   );
 
   const isVideoLiked = likesState.likedVideo?.find(
     (eachVideo) => eachVideo._id === selectedVideo._id
   );
 
+  const isVideoWatchlater = watchLaterState?.watchLater?.some(
+    (eachVideo) => eachVideo._id === selectedVideo._id
+  );
+
   const handleLikeClick = () => {
-    if (isAuth) {
-      saveLikedVideo(selectedVideo);
-    } else {
-      navigate("/login");
-    }
+    isAuth ? saveLikedVideo(selectedVideo) : navigate("/login");
   };
 
+  const handleWatchLaterClick = () => {
+    isAuth ? addToWatchLater(selectedVideo) : navigate("/login");
+  };
   return (
     <div className="watch-page middle-content">
       <div className="watch-page-video-container">
@@ -100,8 +107,16 @@ const VideoWatchPage = () => {
                 </>
               )}
             </button>
-            <button className="watch-page-icon-button">
-              <WatchLaterOutlinedIcon /> Watch Later
+            <button
+              className="watch-page-icon-button"
+              onClick={handleWatchLaterClick}
+            >
+              {isVideoWatchlater ? (
+                <WatchLaterIcon />
+              ) : (
+                <WatchLaterOutlinedIcon />
+              )}
+              Watch Later
             </button>
             <button className="watch-page-icon-button">
               <PlaylistAddOutlinedIcon /> Save
