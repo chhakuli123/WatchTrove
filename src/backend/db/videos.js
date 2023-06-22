@@ -328,8 +328,8 @@ export const videos = [
     categoryName: "Yoga",
   },
   {
-    _id: "rN8LqWLld4",
-    videoLink: "https://www.youtube.com/watch?v=rN8LqWLld4",
+    _id: "irN8LqWLld4",
+    videoLink: "https://www.youtube.com/watch?v=irN8LqWLld4",
     title: "Jai Shiva Omkara - Soulful Prayer | Krishna Das",
     description: "Provided to YouTube by A-Train Entertainment",
     creator: "Krishna Das Music",

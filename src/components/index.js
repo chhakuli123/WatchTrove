@@ -10,3 +10,4 @@ export { LoginForm } from "./authentication/LoginForm";
 export { Profile } from "./authentication/profile/Profile";
 export { PrivateRoute } from "./authentication/PrivateRoute";
 export { LikedVideoCard } from "./liked-video-card/LikedVideoCard";
+export { Search } from "./search/Search";

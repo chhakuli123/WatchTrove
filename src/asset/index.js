@@ -25,4 +25,5 @@ export {
   DeleteIcon,
   ThumbUpOffAltIcon,
   ThumbUpAltIcon,
+  YoutubeSearchedForIcon,
 } from "./icons/materialIcons";
