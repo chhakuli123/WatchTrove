@@ -38,7 +38,7 @@ input:focus {
 
 .topbar-search {
   border-radius: 15px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--primary-color);
   display: flex;
   align-items: center;
   height: 1.7rem;
