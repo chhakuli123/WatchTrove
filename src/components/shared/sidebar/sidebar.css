@@ -5,19 +5,14 @@
   height: 100vh;
   position: fixed;
   top: 4rem;
-  width: 10rem;
-  padding: 1.2rem;
+  width: 12rem;
   border-right: 1px solid var(--border-color);
 }
 
 .sidebar-menu {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-}
-
-.sidebar-menu-item {
-  margin-bottom: 1.2rem;
+  margin-top: 1rem;
 }
 
 .sidebar-menu-item a {
@@ -27,7 +22,8 @@
   font-weight: bold;
   color: var(--white-text);
   font-size: 1rem;
-  margin: 2rem 0;
+  width: 86%;
+  padding: 1.2rem 0rem 1.2rem 1.7rem;
 }
 
 .sidebar-menu-icon {
@@ -36,10 +32,13 @@
   color: var(--white-text);
 }
 
-.sidebar-menu-item a:hover {
-  color: var(--primary-hover);
+.sidebar-active {
+  background-color: var(--primary-hover);
 }
 
+.mobile-bottom-bar-item a:hover {
+  color: var(--primary-hover);
+}
 /* Styles for mobile bottom bar */
 .mobile-bottom-bar {
   position: fixed;

@@ -9,39 +9,57 @@ import {
   FiberManualRecordIcon,
   ThumbUpAltIcon,
   ThumbUpOffAltIcon,
+  WatchLaterIcon,
 } from "asset";
 import { calculateYearsAgo } from "utils";
-import { useAuth, useLikesContext } from "context";
+import { useAuth, useLikesContext, useWatchLaterContext } from "context";
 import "./videocard.css";
 
 const VideoCard = ({ video }) => {
   const [showTools, setShowTools] = useState(false);
   const navigate = useNavigate();
-  
+
   const { isAuth } = useAuth();
   const { state, saveLikedVideo } = useLikesContext();
+  const { state: watchLaterState, addToWatchLater } = useWatchLaterContext();
 
-  const { _id, thumbnail, creatorImg, title, description, creator, view, timeStamp } = video;
+  const {
+    _id,
+    thumbnail,
+    creatorImg,
+    title,
+    description,
+    creator,
+    view,
+    timeStamp,
+  } = video;
   const yearsAgo = calculateYearsAgo(timeStamp);
 
   const likedHandler = () => {
-    if (isAuth) {
-      saveLikedVideo(video);
-    } else {
-      navigate("/login");
-    }
+    isAuth ? saveLikedVideo(video) : navigate("/login");
     setShowTools(false);
   };
 
+  const watchLaterHandler = () => {
+    isAuth ? addToWatchLater(video) : navigate("/login");
+    setShowTools(false);
+  };
+  
   const handleToolClick = (e) => {
     e.stopPropagation();
     setShowTools(!showTools);
   };
 
-  const isVideoLiked = state.likedVideo.some((eachVideo) => eachVideo._id === _id);
+  const isVideoLiked = state.likedVideo.some(
+    (eachVideo) => eachVideo._id === _id
+  );
+
+  const isVideoWatchlater = watchLaterState?.watchLater?.some(
+    (eachVideo) => eachVideo._id === _id
+  );
 
   return (
-    <div className="video-card" onClick={()=>navigate(`/watchpage/${_id}`)}>
+    <div className="video-card" onClick={() => navigate(`/watchpage/${_id}`)}>
       <img src={thumbnail} alt={title} className="video-thumbnail" />
       <div className="card-content">
         <div className="card-head">
@@ -49,12 +67,20 @@ const VideoCard = ({ video }) => {
           <h2 className="card-title">{title}</h2>
         </div>
 
-        <div className="tools" style={{ display: showTools ? "flex" : "none" }} onClick={(e)=> e.stopPropagation()}>
+        <div
+          className="tools"
+          style={{ display: showTools ? "flex" : "none" }}
+          onClick={(e) => e.stopPropagation()}
+        >
           <button onClick={likedHandler}>
             {isVideoLiked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
           </button>
-          <button>
-            <WatchLaterOutlinedIcon />
+          <button onClick={watchLaterHandler}>
+            {isVideoWatchlater ? (
+              <WatchLaterIcon />
+            ) : (
+              <WatchLaterOutlinedIcon />
+            )}
           </button>
           <button>
             <PlaylistAddOutlinedIcon />

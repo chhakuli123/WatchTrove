@@ -25,6 +25,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
 export {
   LoginIcon,
   LogoutIcon,
@@ -53,4 +54,5 @@ export {
   ThumbUpOffAltIcon,
   ThumbUpAltIcon,
   YoutubeSearchedForIcon,
+  WatchLaterIcon,
 };

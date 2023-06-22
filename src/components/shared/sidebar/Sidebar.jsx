@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import {
   HomeOutlinedIcon,
@@ -19,46 +19,82 @@ const Sidebar = () => {
       <div className="desktop-sidebar ">
         <ul className="sidebar-menu">
           <li className="sidebar-menu-item">
-            <Link to="/">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-menu-item sidebar-active"
+                  : "sidebar-menu-item"
+              }
+            >
               <HomeOutlinedIcon className="sidebar-menu-icon" />
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="sidebar-menu-item">
-            <Link to="/explore">
+            <NavLink
+              to="/explore"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-menu-item sidebar-active"
+                  : "sidebar-menu-item"
+              }
+            >
               <ExploreOutlinedIcon className="sidebar-menu-icon" />
               Explore
-            </Link>
+            </NavLink>
           </li>
           <li className="sidebar-menu-item">
-            <Link to="/likedvideos">
+            <NavLink
+              to="likedvideos"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-menu-item sidebar-active"
+                  : "sidebar-menu-item"
+              }
+            >
               <FavoriteBorderOutlinedIcon className="sidebar-menu-icon" />
               Liked Videos
-            </Link>
+            </NavLink>
           </li>
           <li className="sidebar-menu-item">
-            <Link to="/watch-later">
+            <NavLink
+              to="/watchlater"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-menu-item sidebar-active"
+                  : "sidebar-menu-item"
+              }
+            >
               <WatchLaterOutlinedIcon className="sidebar-menu-icon" />
               Watch Later
-            </Link>
+            </NavLink>
           </li>
           <li className="sidebar-menu-item">
-            <Link to="/playlist">
+            <NavLink
+              to="/playlist"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-menu-item sidebar-active"
+                  : "sidebar-menu-item"
+              }
+            >
               <PlaylistAddOutlinedIcon className="sidebar-menu-icon" />
               Playlist
-            </Link>
+            </NavLink>
           </li>
           <li className="sidebar-menu-item">
-            <Link to="/upload-video">
-              <FileUploadOutlinedIcon className="sidebar-menu-icon" />
-              Upload Video
-            </Link>
-          </li>
-          <li className="sidebar-menu-item">
-            <Link to="/history">
+            <NavLink
+              to="/history"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-menu-item sidebar-active"
+                  : "sidebar-menu-item"
+              }
+            >
               <HistoryOutlinedIcon className="sidebar-menu-icon" />
               History
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -81,7 +117,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="mobile-bottom-bar-item">
-          <Link to="/watch-later">
+          <Link to="/watchlater">
             <WatchLaterOutlinedIcon className="mobile-bottom-bar-icon" />
           </Link>
         </li>

@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-import { Explore, Home, Likes, VideoWatchPage } from "pages";
+import { Explore, Home, Likes, VideoWatchPage, WatchLater } from "pages";
 import {
   Footer,
   LoginForm,
@@ -35,6 +35,7 @@ function App() {
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/likedvideos" element={<Likes />} />
+          <Route path="/watchlater" element={<WatchLater />} />
         </Route>
       </Routes>
 
