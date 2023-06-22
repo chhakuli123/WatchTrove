@@ -2,7 +2,6 @@
 .video-categories {
   display: flex;
   margin-left: 12.2rem;
-  background-color: var(--dark-background-color);
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -31,7 +30,6 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin-left: 12.2rem;
   padding: 0 1.5rem;
-  background-color: var(--dark-background-color);
 }
 
 @media screen and (max-width: 767px) {

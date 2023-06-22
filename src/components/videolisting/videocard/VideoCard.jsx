@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 import {
   PlaylistAddOutlinedIcon,
@@ -15,43 +15,33 @@ import { useAuth, useLikesContext } from "context";
 import "./videocard.css";
 
 const VideoCard = ({ video }) => {
-  const [tool, setTool] = useState(false);
-  const { state } = useLikesContext();
-  const { isAuth } = useAuth();
+  const [showTools, setShowTools] = useState(false);
   const navigate = useNavigate();
+  
+  const { isAuth } = useAuth();
+  const { state, saveLikedVideo } = useLikesContext();
 
-  const {
-    thumbnail,
-    creatorImg,
-    title,
-    description,
-    creator,
-    view,
-    timeStamp,
-  } = video;
-
+  const { _id, thumbnail, creatorImg, title, description, creator, view, timeStamp } = video;
   const yearsAgo = calculateYearsAgo(timeStamp);
 
-  // Like handler
-  const { saveLikedVideo } = useLikesContext();
-
   const likedHandler = () => {
-    // Sending liked video object to likes context
-    isAuth ? saveLikedVideo(video) : navigate("/login");
-    setTool(false);
+    if (isAuth) {
+      saveLikedVideo(video);
+    } else {
+      navigate("/login");
+    }
+    setShowTools(false);
   };
 
   const handleToolClick = (e) => {
     e.stopPropagation();
-    setTool(!tool);
+    setShowTools(!showTools);
   };
 
-  const handleIconClick = (e) => {
-    e.stopPropagation();
-  };
+  const isVideoLiked = state.likedVideo.some((eachVideo) => eachVideo._id === _id);
 
   return (
-    <div className="video-card">
+    <div className="video-card" onClick={()=>navigate(`/watchpage/${_id}`)}>
       <img src={thumbnail} alt={title} className="video-thumbnail" />
       <div className="card-content">
         <div className="card-head">
@@ -59,19 +49,9 @@ const VideoCard = ({ video }) => {
           <h2 className="card-title">{title}</h2>
         </div>
 
-        <div
-          className="tools"
-          style={tool ? { display: "flex" } : { display: "none" }}
-          onClick={handleIconClick}
-        >
-          <button onClick={() => likedHandler(video)}>
-            {state.likedVideo.find(
-              (eachVideo) => eachVideo._id === video._id
-            ) ? (
-              <ThumbUpAltIcon />
-            ) : (
-              <ThumbUpOffAltIcon />
-            )}
+        <div className="tools" style={{ display: showTools ? "flex" : "none" }} onClick={(e)=> e.stopPropagation()}>
+          <button onClick={likedHandler}>
+            {isVideoLiked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
           </button>
           <button>
             <WatchLaterOutlinedIcon />
@@ -99,6 +79,5 @@ const VideoCard = ({ video }) => {
     </div>
   );
 };
-
 
 export { VideoCard };

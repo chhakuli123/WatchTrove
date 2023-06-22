@@ -19,7 +19,7 @@ const Likes = () => {
           <h1 className="text-md">Liked Video ({likedVideo.length})</h1>
           {likedVideo?.length === 0 && (
             <>
-              <h3>There is no Liked video. Please add 😊</h3>
+              <h3>There is no Liked video. Please Explore and Add 😊</h3>
               <div className="hero-btn-container">
                 <button
                   className="hero-btn-explore"
