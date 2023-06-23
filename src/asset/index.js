@@ -27,4 +27,6 @@ export {
   ThumbUpAltIcon,
   YoutubeSearchedForIcon,
   WatchLaterIcon,
+  CloseIcon,
+  PlaylistAddCircleIcon,
 } from "./icons/materialIcons";

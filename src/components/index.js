@@ -11,3 +11,6 @@ export { Profile } from "./authentication/profile/Profile";
 export { PrivateRoute } from "./authentication/PrivateRoute";
 export { LikedVideoCard } from "./liked-video-card/LikedVideoCard";
 export { Search } from "./search/Search";
+export { PlayListCard } from "./playlist/playlist-card/PlayListCard";
+export { PlayListVideoCard } from "./playlist/playlist-video-card/PlayListVideoCard";
+export { PlaylistModal } from "./playlist/playlist-modal/PlaylistModal ";

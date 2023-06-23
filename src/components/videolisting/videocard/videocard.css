@@ -60,28 +60,33 @@
 .tools {
   position: absolute;
   right: 0.2rem;
-  bottom: 9rem;
+  bottom: 8.5rem;
   display: none;
 }
 
 .tools button {
-  margin: 0 0.1rem;
-  padding: 0.5rem;
+  margin: 0 0.3rem;
+  padding: 0.2rem;
   display: flex;
   align-items: center;
   border-radius: 50%;
   backdrop-filter: blur(15px) saturate(180%);
   -webkit-backdrop-filter: blur(5px) saturate(180%);
-  background-color: var(--tools-bg);
+  background-color: var(--white-text);
   transition: 0.3s ease-in;
   border: none;
   font-size: 1.5rem;
-  color: var(--white-text);
+  color: var(--background-color);
   cursor: pointer;
 }
 
 .tools button:hover {
   background-color: var(--primary-hover);
+  color: var(--white-text);
+}
+
+.tools-button .icons {
+  margin: 0.3rem 0.3rem;
 }
 
 .icons.card-icon {
@@ -107,7 +112,7 @@
 
 .creator-timestamp {
   color: var(--secondary-text);
-  margin: 0.9rem 0 0.1rem 0;
+  margin-top: 0.9rem;
 }
 .creator-timestamp .icons {
   font-size: 0.5rem;
@@ -116,17 +121,60 @@
 }
 
 .video-description {
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   color: var(--secondary-text);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* Modal CSS */
+.playlist-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8999;
+}
+
+.create-playlist-wrapper {
+  width: 30rem;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.lists-playlist {
+  margin-bottom: 1rem;
+}
+
+.created-playlist {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+.created-playlist:hover {
+  background-color: var(--primary-hover);
+  color: var(--white-text);
+}
+
 @media screen and (max-width: 767px) {
   .video-thumbnail {
     height: 13rem;
-  }
-  .tools {
-    bottom: 8rem;
   }
 }

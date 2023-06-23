@@ -5,3 +5,4 @@ export {
   WatchLaterContextProvider,
   useWatchLaterContext,
 } from "./watchLaterContext";
+export { PlayListContextProvider, usePlaylistContext } from "./playListContext";

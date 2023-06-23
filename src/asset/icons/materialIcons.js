@@ -26,6 +26,8 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import CloseIcon from "@mui/icons-material/Close";
+import PlaylistAddCircleIcon from "@mui/icons-material/PlaylistAddCircle";
 export {
   LoginIcon,
   LogoutIcon,
@@ -55,4 +57,6 @@ export {
   ThumbUpAltIcon,
   YoutubeSearchedForIcon,
   WatchLaterIcon,
+  CloseIcon,
+  PlaylistAddCircleIcon,
 };

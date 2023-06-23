@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import {
   useAuth,
   useData,
   useLikesContext,
+  usePlaylistContext,
   useWatchLaterContext,
 } from "context";
-import { VideoCard } from "components";
+import { PlaylistModal, VideoCard } from "components";
 import {
   CheckCircleIcon,
   PlaylistAddOutlinedIcon,
@@ -19,6 +20,7 @@ import {
 import "./videowatchpage.css";
 
 const VideoWatchPage = () => {
+  const [createPlaylistModal, setCreatePlaylistModal] = useState(false);
   const { videoId } = useParams();
   const navigate = useNavigate();
 
@@ -26,6 +28,7 @@ const VideoWatchPage = () => {
   const { isAuth } = useAuth();
   const { state: likesState, saveLikedVideo } = useLikesContext();
   const { state: watchLaterState, addToWatchLater } = useWatchLaterContext();
+  const { state: { playlists } } = usePlaylistContext();
 
   const selectedVideo = state.videos.find((video) => video._id === videoId);
 
@@ -48,11 +51,8 @@ const VideoWatchPage = () => {
     (video) => video.categoryName === categoryName && video._id !== videoId
   );
 
+  // --------------------liked Handler-------------------------------------
   const isVideoLiked = likesState.likedVideo?.find(
-    (eachVideo) => eachVideo._id === selectedVideo._id
-  );
-
-  const isVideoWatchlater = watchLaterState?.watchLater?.some(
     (eachVideo) => eachVideo._id === selectedVideo._id
   );
 
@@ -60,9 +60,15 @@ const VideoWatchPage = () => {
     isAuth ? saveLikedVideo(selectedVideo) : navigate("/login");
   };
 
+  // --------------------watchLater Handler -------------------------------------
+  const isVideoWatchlater = watchLaterState?.watchLater?.some(
+    (eachVideo) => eachVideo._id === selectedVideo._id
+  );
+
   const handleWatchLaterClick = () => {
     isAuth ? addToWatchLater(selectedVideo) : navigate("/login");
   };
+
   return (
     <div className="watch-page middle-content">
       <div className="watch-page-video-container">
@@ -118,8 +124,13 @@ const VideoWatchPage = () => {
               )}
               Watch Later
             </button>
-            <button className="watch-page-icon-button">
-              <PlaylistAddOutlinedIcon /> Save
+            <button
+              className="watch-page-icon-button"
+              onClick={() =>
+                isAuth ? setCreatePlaylistModal(true) : navigate("/login")
+              }
+            >
+              <PlaylistAddOutlinedIcon /> Save To Playlist
             </button>
           </div>
         </div>
@@ -132,6 +143,14 @@ const VideoWatchPage = () => {
           ))}
         </div>
       </div>
+
+      {createPlaylistModal && (
+        <PlaylistModal
+          video={selectedVideo}
+          setCreatePlaylistModal={setCreatePlaylistModal}
+          playlists={playlists}
+        />
+      )}
     </div>
   );
 };

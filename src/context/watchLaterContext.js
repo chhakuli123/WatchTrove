@@ -42,7 +42,7 @@ export const WatchLaterContextProvider = ({ children }) => {
               });
             }
           } catch (error) {
-            console.log(error);
+            toast.error(error.message);
           }
         })();
     }
@@ -72,7 +72,7 @@ export const WatchLaterContextProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        toast.error(error);
+        toast.error(error.message);
       }
     } else {
       try {
@@ -97,7 +97,7 @@ export const WatchLaterContextProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        console.log(error);
+        toast.error(error.message);
       }
     }
   };
@@ -122,7 +122,7 @@ export const WatchLaterContextProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        toast.error(error);
+        toast.error(error.message);
       }
     }
   };

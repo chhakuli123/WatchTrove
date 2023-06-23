@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
         loggedMessage(foundUser);
       }
     } catch (error) {
-      toast.error(error);
+      toast.error("Fill Login Details");
     }
   };
 
@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
         localStorage.setItem("Signup-Token", encodedToken);
       }
     } catch (error) {
-      toast.error(error);
+      toast.error(error.message);
     }
   };
 
