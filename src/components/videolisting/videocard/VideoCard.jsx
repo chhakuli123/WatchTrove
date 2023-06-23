@@ -12,8 +12,14 @@ import {
   WatchLaterIcon,
 } from "asset";
 import { calculateYearsAgo } from "utils";
-import { useAuth, useLikesContext, useWatchLaterContext } from "context";
+import {
+  useAuth,
+  useLikesContext,
+  usePlaylistContext,
+  useWatchLaterContext,
+} from "context";
 import "./videocard.css";
+import { PlaylistModal } from "components";
 
 const VideoCard = ({ video }) => {
   const [showTools, setShowTools] = useState(false);
@@ -35,35 +41,47 @@ const VideoCard = ({ video }) => {
   } = video;
   const yearsAgo = calculateYearsAgo(timeStamp);
 
-  const likedHandler = () => {
-    isAuth ? saveLikedVideo(video) : navigate("/login");
+  // --------------------Playlist Handler-------------------------------------
+  const [createPlaylistModal, setCreatePlaylistModal] = useState(false);
+  const { state: { playlists } } = usePlaylistContext();
+
+  const modalHandler = (event) => {
+    event.stopPropagation();
+    setCreatePlaylistModal(true);
     setShowTools(false);
   };
 
-  const watchLaterHandler = () => {
-    isAuth ? addToWatchLater(video) : navigate("/login");
+  // --------------------liked Handler-------------------------------------
+  const likedHandler = () => {
+    isAuth ? saveLikedVideo(video) : navigate("/login");
     setShowTools(false);
-  };
-  
-  const handleToolClick = (e) => {
-    e.stopPropagation();
-    setShowTools(!showTools);
   };
 
   const isVideoLiked = state.likedVideo.some(
     (eachVideo) => eachVideo._id === _id
   );
 
+  // --------------------watchLater Handler -------------------------------------
+  const watchLaterHandler = () => {
+    isAuth ? addToWatchLater(video) : navigate("/login");
+    setShowTools(false);
+  };
+
   const isVideoWatchlater = watchLaterState?.watchLater?.some(
     (eachVideo) => eachVideo._id === _id
   );
+
+  const handleToolClick = (e) => {
+    e.stopPropagation();
+    setShowTools(!showTools);
+  };
 
   return (
     <div className="video-card" onClick={() => navigate(`/watchpage/${_id}`)}>
       <img src={thumbnail} alt={title} className="video-thumbnail" />
       <div className="card-content">
         <div className="card-head">
-          <img src={creatorImg} alt="" />
+          <img src={creatorImg} alt="creator-img" />
           <h2 className="card-title">{title}</h2>
         </div>
 
@@ -72,19 +90,23 @@ const VideoCard = ({ video }) => {
           style={{ display: showTools ? "flex" : "none" }}
           onClick={(e) => e.stopPropagation()}
         >
-          <button onClick={likedHandler}>
-            {isVideoLiked ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
+          <button className="tools-button" onClick={likedHandler}>
+            {isVideoLiked ? <ThumbUpAltIcon className="icons"  /> : <ThumbUpOffAltIcon className="icons"  />}
           </button>
-          <button onClick={watchLaterHandler}>
+
+          <button  className="tools-button" onClick={watchLaterHandler}>
             {isVideoWatchlater ? (
-              <WatchLaterIcon />
+              <WatchLaterIcon className="icons"  />
             ) : (
-              <WatchLaterOutlinedIcon />
+              <WatchLaterOutlinedIcon className="icons" />
             )}
           </button>
-          <button>
-            <PlaylistAddOutlinedIcon />
-          </button>
+
+          {isAuth && (
+            <button className="tools-button" onClick={(event) => modalHandler(event)}>
+              <PlaylistAddOutlinedIcon className="icons"  />
+            </button>
+          )}
         </div>
 
         <button className="btn-popup" onClick={handleToolClick}>
@@ -102,6 +124,15 @@ const VideoCard = ({ video }) => {
 
         <p className="video-description">{description}</p>
       </div>
+
+      {/*  Playlist modal*/}
+      {createPlaylistModal && (
+        <PlaylistModal
+          video={video}
+          setCreatePlaylistModal={setCreatePlaylistModal}
+          playlists={playlists}
+        />
+      )}
     </div>
   );
 };
