@@ -37,7 +37,7 @@ const WatchLaterCard = ({ video }) => {
           className="tools liked-tools"
           style={{ display: showTools ? "flex" : "none" }}
         >
-          <button className="delete-icon" onClick={handleRemoveLikedVideo}>
+          <button className="tools-button" onClick={handleRemoveLikedVideo}>
             <DeleteIcon className="icons" />
           </button>
         </div>

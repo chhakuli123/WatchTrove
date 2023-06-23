@@ -5,7 +5,6 @@ import {
   HomeOutlinedIcon,
   ExploreOutlinedIcon,
   FavoriteBorderOutlinedIcon,
-  FileUploadOutlinedIcon,
   HistoryOutlinedIcon,
   PlaylistAddOutlinedIcon,
   WatchLaterOutlinedIcon,
@@ -123,7 +122,7 @@ const Sidebar = () => {
         </li>
         <li className="mobile-bottom-bar-item">
           <Link to="/playlist">
-            <FileUploadOutlinedIcon className="mobile-bottom-bar-icon" />
+            <PlaylistAddOutlinedIcon className="mobile-bottom-bar-icon" />
           </Link>
         </li>
         <li className="mobile-bottom-bar-item">
