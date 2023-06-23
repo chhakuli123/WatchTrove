@@ -1,7 +1,15 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-import { Explore, Home, Likes, VideoWatchPage, WatchLater } from "pages";
+import {
+  Explore,
+  Home,
+  Likes,
+  VideoWatchPage,
+  WatchLater,
+  Playlist,
+  PlaylistVideos,
+} from "pages";
 import {
   Footer,
   LoginForm,
@@ -20,7 +28,15 @@ function App() {
   return (
     <div className="App pagewrapper">
       <ScrollToTop />
-      <Toaster position="top-center" autoClose={2000} />
+      <Toaster
+        position="top-center"
+        autoClose={2000}
+        toastOptions={{
+          style: {
+            zIndex: 9999,
+          },
+        }}
+      />
 
       {pathname !== "/" && <Topbar />}
       {pathname !== "/" && <Sidebar />}
@@ -36,6 +52,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/likedvideos" element={<Likes />} />
           <Route path="/watchlater" element={<WatchLater />} />
+          <Route path="/playlist" element={<Playlist />} />
+          <Route path="/playlist/:playlistId" element={<PlaylistVideos />} />
         </Route>
       </Routes>
 
