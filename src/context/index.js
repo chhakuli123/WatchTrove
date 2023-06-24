@@ -7,3 +7,4 @@ export {
 } from "./watchLaterContext";
 export { PlayListContextProvider, usePlaylistContext } from "./playListContext";
 export { HistoryContextProvider, useHistoryContext } from "./historyContext";
+export { ThemeProvider, useTheme } from "./themeContext";

@@ -3,17 +3,21 @@ import { useNavigate } from "react-router-dom";
 import debounce from "lodash.debounce";
 
 import {
+  DarkModeOutlinedIcon,
   LightModeOutlinedIcon,
   PersonOutlineOutlinedIcon,
   SearchIcon,
 } from "asset";
 import { Search } from "components";
 import "./topbar.css";
+import { useTheme } from "context";
 
 const Topbar = () => {
   const [searchQuery, setSearchQuery] = useState({ query: "" });
   const [showSearchResult, setShowSearchResult] = useState(false);
   const navigate = useNavigate();
+
+  const { theme, switchTheme } = useTheme();
 
   const SearchInputHandler = (event) => {
     if (/^\s/.test(event.target.value)) {
@@ -29,7 +33,10 @@ const Topbar = () => {
     }
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debouncedChangeHandler = useCallback(debounce(SearchInputHandler, 500), []);
+  const debouncedChangeHandler = useCallback(
+    debounce(SearchInputHandler, 500),
+    []
+  );
 
   const inputRef = useRef();
 
@@ -66,28 +73,32 @@ const Topbar = () => {
         </div>
         <div className="topbar-right">
           <div className="topbar-icons">
-            <LightModeOutlinedIcon />
+            {theme === "light" ? (
+              <DarkModeOutlinedIcon onClick={switchTheme} />
+            ) : (
+              <LightModeOutlinedIcon onClick={switchTheme} />
+            )}
             <PersonOutlineOutlinedIcon onClick={() => navigate("/profile")} />
           </div>
         </div>
       </nav>
       {/* Mobile search input */}
       <div className="mobile-search-container">
-      <div className="mobile-search">
-        <input
-          type="text"
-          placeholder="Search for videos"
-          onChange={debouncedChangeHandler}
-        />
-        <SearchIcon className="search-icon" />
-        {showSearchResult && (
-              <Search
-                searchQuery={searchQuery}
-                setShowSearchResult={setShowSearchResult}
-                inputRef={inputRef}
-              />
-            )}
-      </div>
+        <div className="mobile-search">
+          <input
+            type="text"
+            placeholder="Search for videos"
+            onChange={debouncedChangeHandler}
+          />
+          <SearchIcon className="search-icon" />
+          {showSearchResult && (
+            <Search
+              searchQuery={searchQuery}
+              setShowSearchResult={setShowSearchResult}
+              inputRef={inputRef}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

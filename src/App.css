@@ -30,6 +30,7 @@
   background-color: var(--primary-color);
   border-radius: 1rem;
 }
+
 :root {
   --dark-background-color: #121212;
   --background-color: #191921;
@@ -40,7 +41,15 @@
   --primary-hover: #353542;
   --border-color: rgba(104, 97, 97, 0.328);
   --boxshadow-color: rgba(0, 0, 0, 0.3);
-  --danger: #f44336;
+  --danger: #e01006;
+}
+
+[data-theme="light"] {
+  --dark-background-color: #f6f1f1;
+  --background-color: #ffffff;
+  --primary-color: #786591;
+  --white-text: #444444;
+  --primary-hover: #d9d9d9;
 }
 
 /* Shared CSS */

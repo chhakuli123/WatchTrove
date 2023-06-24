@@ -12,6 +12,7 @@ import {
   WatchLaterContextProvider,
   PlayListContextProvider,
   HistoryContextProvider,
+  ThemeProvider,
 } from "context";
 
 // Call make Server
@@ -20,19 +21,21 @@ makeServer();
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <DataContextProvider>
-          <LikesContextProvider>
-            <WatchLaterContextProvider>
-              <PlayListContextProvider>
-                <HistoryContextProvider>
-                  <App />
-                </HistoryContextProvider>
-              </PlayListContextProvider>
-            </WatchLaterContextProvider>
-          </LikesContextProvider>
-        </DataContextProvider>
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <DataContextProvider>
+            <LikesContextProvider>
+              <WatchLaterContextProvider>
+                <PlayListContextProvider>
+                  <HistoryContextProvider>
+                    <App />
+                  </HistoryContextProvider>
+                </PlayListContextProvider>
+              </WatchLaterContextProvider>
+            </LikesContextProvider>
+          </DataContextProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

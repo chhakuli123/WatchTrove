@@ -28,6 +28,7 @@ import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import CloseIcon from "@mui/icons-material/Close";
 import PlaylistAddCircleIcon from "@mui/icons-material/PlaylistAddCircle";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 export {
   LoginIcon,
   LogoutIcon,
@@ -59,4 +60,5 @@ export {
   WatchLaterIcon,
   CloseIcon,
   PlaylistAddCircleIcon,
+  DarkModeOutlinedIcon,
 };
