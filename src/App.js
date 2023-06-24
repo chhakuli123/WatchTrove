@@ -9,6 +9,7 @@ import {
   WatchLater,
   Playlist,
   PlaylistVideos,
+  History,
 } from "pages";
 import {
   Footer,
@@ -54,6 +55,7 @@ function App() {
           <Route path="/watchlater" element={<WatchLater />} />
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/playlist/:playlistId" element={<PlaylistVideos />} />
+          <Route path="/history" element={<History />} />
         </Route>
       </Routes>
 
