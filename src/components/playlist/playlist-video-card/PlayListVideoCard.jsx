@@ -1,12 +1,18 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import { usePlaylistContext } from "context";
-import { CheckCircleIcon, DeleteIcon } from "asset";
+import { useAuth, useHistoryContext, usePlaylistContext } from "context";
+import { CheckCircleIcon, DeleteIcon, MoreVertOutlinedIcon } from "asset";
+import { useState } from "react";
 
 const PlayListVideoCard = ({ video }) => {
+  const [showTools, setShowTools] = useState(false);
+
   const { playlistId } = useParams();
   const navigate = useNavigate();
+
+  const { isAuth } = useAuth();
+  const { addHistoryVideo } = useHistoryContext();
 
   const {
     _id,
@@ -20,26 +26,42 @@ const PlayListVideoCard = ({ video }) => {
 
   const { deleteParticularVideo } = usePlaylistContext();
 
+  const singleVideoHandler = () => {
+    navigate(`/watchpage/${_id}`);
+    if(isAuth){
+      addHistoryVideo(video);
+    }
+  };
+
   return (
-    <div className="video-card" key={_id}>
+    <div className="shared-video-card" key={_id}>
       <img
         src={thumbnail}
         alt={title}
         className="video-thumbnail"
-        onClick={() => navigate(`/watchpage/${_id}`)}
+        onClick={singleVideoHandler}
       />
 
       <div className="card-content">
         <div className="card-head">
-          <img src={creatorImg} alt="creator-img" />
+          <img src={creatorImg} alt="" />
           <h2 className="card-title">{title}</h2>
         </div>
 
-        <button
-          className="btn-popup"
-          onClick={() => deleteParticularVideo(video._id, playlistId)}
+        <div
+          className="tools liked-tools"
+          style={{ display: showTools ? "flex" : "none" }}
         >
-          <DeleteIcon className="icons card-icon" />
+          <button
+            className="tools-button"
+            onClick={() => deleteParticularVideo(video._id, playlistId)}
+          >
+            <DeleteIcon className="icons" />
+          </button>
+        </div>
+
+        <button className="btn-popup" onClick={() => setShowTools(!showTools)}>
+          <MoreVertOutlinedIcon className="icons card-icon" />
         </button>
       </div>
 

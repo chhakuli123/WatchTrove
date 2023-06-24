@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useLikesContext } from "context";
+import { useAuth, useHistoryContext, useLikesContext } from "context";
 import { CheckCircleIcon, DeleteIcon, MoreVertOutlinedIcon } from "asset";
 
 const LikedVideoCard = ({ video }) => {
   const [showTools, setShowTools] = useState(false);
   const navigate = useNavigate();
+
+  const { isAuth } = useAuth();
+  const { addHistoryVideo } = useHistoryContext();
   const { removeLikedVideo } = useLikesContext();
 
   const { _id, thumbnail, title, creatorImg, creator, description } = video;
@@ -20,9 +23,16 @@ const LikedVideoCard = ({ video }) => {
     e.stopPropagation();
     removeLikedVideo(video._id);
   };
+  
+  const singleVideoHandler = () => {
+    navigate(`/watchpage/${_id}`);
+    if(isAuth){
+      addHistoryVideo(video);
+    }
+  };
 
   return (
-    <div className="video-card" key={_id} onClick={()=> navigate(`/watchpage/${_id}`)}>
+    <div className="shared-video-card" key={_id} onClick={singleVideoHandler}>
       <img src={thumbnail} alt={title} className="video-thumbnail" />
 
       <div className="card-content">
