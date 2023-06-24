@@ -49,7 +49,7 @@ const VideoCard = ({ video }) => {
 
   const modalHandler = (event) => {
     event.stopPropagation();
-    setCreatePlaylistModal(true);
+    isAuth ? setCreatePlaylistModal(true) : navigate("/login")
     setShowTools(false);
   };
 
@@ -111,11 +111,11 @@ const VideoCard = ({ video }) => {
             )}
           </button>
 
-          {isAuth && (
-            <button className="tools-button" onClick={(event) => modalHandler(event)}>
-              <PlaylistAddOutlinedIcon className="icons"  />
-            </button>
-          )}
+        
+          <button className="tools-button" onClick={(event) => modalHandler(event)}>
+            <PlaylistAddOutlinedIcon className="icons"  />
+          </button>
+        
         </div>
 
         <button className="btn-popup" onClick={handleToolClick}>
