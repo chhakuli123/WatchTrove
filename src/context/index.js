@@ -6,3 +6,4 @@ export {
   useWatchLaterContext,
 } from "./watchLaterContext";
 export { PlayListContextProvider, usePlaylistContext } from "./playListContext";
+export { HistoryContextProvider, useHistoryContext } from "./historyContext";
