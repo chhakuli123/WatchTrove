@@ -29,4 +29,5 @@ export {
   WatchLaterIcon,
   CloseIcon,
   PlaylistAddCircleIcon,
+  DarkModeOutlinedIcon,
 } from "./icons/materialIcons";

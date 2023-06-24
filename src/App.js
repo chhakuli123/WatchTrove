@@ -22,12 +22,14 @@ import {
 } from "components";
 import { ScrollToTop } from "utils";
 import "./App.css";
+import { useTheme } from "context";
 
 function App() {
   const { pathname } = useLocation();
+  const { theme } = useTheme();
 
   return (
-    <div className="App pagewrapper">
+    <div className="App pagewrapper" data-theme={theme}>
       <ScrollToTop />
       <Toaster
         position="top-center"
