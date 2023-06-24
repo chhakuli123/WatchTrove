@@ -9,7 +9,7 @@ import {
   Playlist,
   PlaylistVideos,
   History,
-  Likes,
+  LikedVideos,
 } from "pages";
 import {
   Footer,
@@ -51,7 +51,7 @@ function App() {
 
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
-          <Route path="/likedvideos" element={<Likes />} />
+          <Route path="/likedvideos" element={<LikedVideos />} />
           <Route path="/watchlater" element={<WatchLater />} />
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/playlist/:playlistId" element={<PlaylistVideos />} />
