@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import { createRoot } from "react-dom";
 
 import "./index.css";
 import App from "./App";
@@ -11,12 +11,13 @@ import {
   LikesContextProvider,
   WatchLaterContextProvider,
   PlayListContextProvider,
+  HistoryContextProvider,
 } from "context";
 
 // Call make Server
 makeServer();
 
-ReactDOM.render(
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
@@ -24,13 +25,14 @@ ReactDOM.render(
           <LikesContextProvider>
             <WatchLaterContextProvider>
               <PlayListContextProvider>
-                <App />
+                <HistoryContextProvider>
+                  <App />
+                </HistoryContextProvider>
               </PlayListContextProvider>
             </WatchLaterContextProvider>
           </LikesContextProvider>
         </DataContextProvider>
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

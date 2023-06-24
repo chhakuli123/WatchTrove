@@ -14,6 +14,7 @@ import {
 import { calculateYearsAgo } from "utils";
 import {
   useAuth,
+  useHistoryContext,
   useLikesContext,
   usePlaylistContext,
   useWatchLaterContext,
@@ -28,6 +29,7 @@ const VideoCard = ({ video }) => {
   const { isAuth } = useAuth();
   const { state, saveLikedVideo } = useLikesContext();
   const { state: watchLaterState, addToWatchLater } = useWatchLaterContext();
+  const { addHistoryVideo } = useHistoryContext();
 
   const {
     _id,
@@ -47,7 +49,7 @@ const VideoCard = ({ video }) => {
 
   const modalHandler = (event) => {
     event.stopPropagation();
-    setCreatePlaylistModal(true);
+    isAuth ? setCreatePlaylistModal(true) : navigate("/login")
     setShowTools(false);
   };
 
@@ -67,7 +69,7 @@ const VideoCard = ({ video }) => {
     setShowTools(false);
   };
 
-  const isVideoWatchlater = watchLaterState?.watchLater?.some(
+  const isVideoWatchlater =  watchLaterState && watchLaterState?.watchLater?.some(
     (eachVideo) => eachVideo._id === _id
   );
 
@@ -75,9 +77,16 @@ const VideoCard = ({ video }) => {
     e.stopPropagation();
     setShowTools(!showTools);
   };
+  
+  const singleVideoHandler = () => {
+    navigate(`/watchpage/${_id}`);
+    if(isAuth){
+      addHistoryVideo(video);
+    }
+  };
 
   return (
-    <div className="video-card" onClick={() => navigate(`/watchpage/${_id}`)}>
+    <div className="video-card" onClick={singleVideoHandler}>
       <img src={thumbnail} alt={title} className="video-thumbnail" />
       <div className="card-content">
         <div className="card-head">
@@ -102,11 +111,11 @@ const VideoCard = ({ video }) => {
             )}
           </button>
 
-          {isAuth && (
-            <button className="tools-button" onClick={(event) => modalHandler(event)}>
-              <PlaylistAddOutlinedIcon className="icons"  />
-            </button>
-          )}
+        
+          <button className="tools-button" onClick={(event) => modalHandler(event)}>
+            <PlaylistAddOutlinedIcon className="icons"  />
+          </button>
+        
         </div>
 
         <button className="btn-popup" onClick={handleToolClick}>

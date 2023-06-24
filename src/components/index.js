@@ -14,3 +14,5 @@ export { Search } from "./search/Search";
 export { PlayListCard } from "./playlist/playlist-card/PlayListCard";
 export { PlayListVideoCard } from "./playlist/playlist-video-card/PlayListVideoCard";
 export { PlaylistModal } from "./playlist/playlist-modal/PlaylistModal ";
+export { WatchLaterCard } from "./watch-later-card/WatchLaterCard";
+export { HistoryCard } from "./history-video-card/HistoryCard";

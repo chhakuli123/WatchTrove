@@ -35,7 +35,7 @@ export const LikesContextProvider = ({ children }) => {
             likesDispatch({ type: "GET_LIKED_VIDEO", payload: likes });
           }
         } catch (error) {
-          toast.error(error.message);
+          console.log(error.message);
         }
       })();
     } else {
@@ -60,7 +60,7 @@ export const LikesContextProvider = ({ children }) => {
           likesDispatch({ type: "REMOVE_LIKED_VIDEO", payload: likes });
         }
       } catch (error) {
-        toast.error(error.message);
+        console.log(error.message);
       }
     } else {
       try {
@@ -82,7 +82,7 @@ export const LikesContextProvider = ({ children }) => {
           likesDispatch({ type: "SAVED_LIKED_VIDEO", payload: likes });
         }
       } catch (error) {
-        toast.error(error.message);
+        console.log(error.message);
       }
     }
   };
@@ -104,7 +104,7 @@ export const LikesContextProvider = ({ children }) => {
           likesDispatch({ type: "REMOVE_LIKED_VIDEO", payload: likes });
         }
       } catch (error) {
-        toast.error(error.message);
+        console.log(error.message);
       }
     }
   };

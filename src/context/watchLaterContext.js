@@ -42,16 +42,16 @@ export const WatchLaterContextProvider = ({ children }) => {
               });
             }
           } catch (error) {
-            toast.error(error.message);
+            console.error("Post Error:", error);
           }
         })();
     }
   }, [isAuth]);
 
   const addToWatchLater = async (video) => {
-    const existingVideo = watchLater.find(
-      (eachVideo) => eachVideo._id === video._id
-    );
+    const existingVideo =
+      watchLater &&
+      watchLater?.find((eachVideo) => eachVideo._id === video._id);
 
     if (existingVideo) {
       try {
@@ -72,7 +72,7 @@ export const WatchLaterContextProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        toast.error(error.message);
+        console.log(error.message);
       }
     } else {
       try {
@@ -97,7 +97,7 @@ export const WatchLaterContextProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        toast.error(error.message);
+        console.error("Post Error:", error);
       }
     }
   };
@@ -122,7 +122,7 @@ export const WatchLaterContextProvider = ({ children }) => {
           });
         }
       } catch (error) {
-        toast.error(error.message);
+        console.error("Post Error:", error);
       }
     }
   };

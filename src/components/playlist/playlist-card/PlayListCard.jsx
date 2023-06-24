@@ -15,8 +15,7 @@ const PlayListCard = ({ eachPlaylist }) => {
   };
 
   return (
-    <div className="playlist-card video-card">
-      <div className="playlist-info">
+    <div className="shared-video-card">
         <img
           src={
             videos?.length === 0
@@ -37,7 +36,6 @@ const PlayListCard = ({ eachPlaylist }) => {
             />
           </span>
         </div>
-      </div>
     </div>
   );
 };

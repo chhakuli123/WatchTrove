@@ -1,38 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useAuth, useHistoryContext, useLikesContext } from "context";
+import { useHistoryContext } from "context";
 import { CheckCircleIcon, DeleteIcon, MoreVertOutlinedIcon } from "asset";
 
-const LikedVideoCard = ({ video }) => {
+const HistoryCard = ({ video }) => {
   const [showTools, setShowTools] = useState(false);
   const navigate = useNavigate();
+  const { deleteHistory } = useHistoryContext();
 
-  const { isAuth } = useAuth();
-  const { addHistoryVideo } = useHistoryContext();
-  const { removeLikedVideo } = useLikesContext();
-
-  const { _id, thumbnail, title, creatorImg, creator, description } = video;
+  const { _id, thumbnail, creatorImg, title, description, creator } = video;
 
   const handleToolClick = (e) => {
     e.stopPropagation();
     setShowTools(!showTools);
   };
 
-  const handleRemoveLikedVideo = (e) => {
+  const handleRemoveHistorydVideo = (e) => {
     e.stopPropagation();
-    removeLikedVideo(video._id);
-  };
-  
-  const singleVideoHandler = () => {
-    navigate(`/watchpage/${_id}`);
-    if(isAuth){
-      addHistoryVideo(video);
-    }
+    deleteHistory(_id);
   };
 
   return (
-    <div className="shared-video-card" key={_id} onClick={singleVideoHandler}>
+    <div className="shared-video-card" key={_id} onClick={()=> navigate(`/watchpage/${_id}`)}>
       <img src={thumbnail} alt={title} className="video-thumbnail" />
 
       <div className="card-content">
@@ -45,7 +35,7 @@ const LikedVideoCard = ({ video }) => {
           className="tools liked-tools"
           style={{ display: showTools ? "flex" : "none" }}
         >
-          <button className="tools-button" onClick={handleRemoveLikedVideo}>
+          <button className="tools-button" onClick={handleRemoveHistorydVideo}>
             <DeleteIcon className="icons" />
           </button>
         </div>
@@ -64,4 +54,4 @@ const LikedVideoCard = ({ video }) => {
   );
 };
 
-export { LikedVideoCard };
+export { HistoryCard };

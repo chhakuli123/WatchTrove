@@ -37,9 +37,40 @@
   --secondary-color: #1a202c;
   --white-text: hsla(0, 0%, 100%, 0.87);
   --secondary-text: #909090;
-  --primary-hover: #2d2d3a;
+  --primary-hover: #353542;
   --border-color: rgba(104, 97, 97, 0.328);
-  --tools-bg: rgba(104, 76, 109, 0.76);
   --boxshadow-color: rgba(0, 0, 0, 0.3);
   --danger: #f44336;
+}
+
+/* Shared CSS */
+.shared-container {
+  margin-left: 12.2rem;
+  padding: 1rem;
+  color: var(--white-text);
+}
+.shared-video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.shared-video-card {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 0.1rem;
+  background-color: var(--background-color);
+  color: var(--white-text);
+}
+@media screen and (max-width: 767px) {
+  .shared-container {
+    margin-left: 0rem;
+  }
+  .shared-video-card {
+    margin: 1rem 0rem;
+    padding: 0rem;
+  }
 }

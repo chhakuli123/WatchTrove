@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useWatchLaterContext } from "context";
+import { useAuth, useHistoryContext, useWatchLaterContext } from "context";
 import { CheckCircleIcon, DeleteIcon, MoreVertOutlinedIcon } from "asset";
 
 const WatchLaterCard = ({ video }) => {
   const [showTools, setShowTools] = useState(false);
   const navigate = useNavigate();
+  
+  const { isAuth } = useAuth();
+  const { addHistoryVideo } = useHistoryContext();
   const { removeWatchLater } = useWatchLaterContext();
 
   const { _id, thumbnail, title, creatorImg, creator, description } = video;
@@ -21,10 +24,15 @@ const WatchLaterCard = ({ video }) => {
     removeWatchLater(video._id);
   };
 
-  console.log("Rendering WatchLaterCard:", video);
+  const singleVideoHandler = () => {
+    navigate(`/watchpage/${_id}`);
+    if(isAuth){
+      addHistoryVideo(video);
+    }
+  };
 
   return (
-    <div className="video-card" key={_id} onClick={() => navigate(`/watchpage/${_id}`)}>
+    <div className="shared-video-card" key={_id} onClick={singleVideoHandler}>
       <img src={thumbnail} alt={title} className="video-thumbnail" />
 
       <div className="card-content">

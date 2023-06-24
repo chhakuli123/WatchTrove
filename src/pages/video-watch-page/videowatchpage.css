@@ -90,12 +90,12 @@
 @media screen and (max-width: 768px) {
   .watch-page {
     flex-direction: column;
-    padding: 2.8rem 1rem;
+    padding: 1rem 1rem;
     margin-left: 0rem;
   }
 
   .watch-page-video-container {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .video-frame {
