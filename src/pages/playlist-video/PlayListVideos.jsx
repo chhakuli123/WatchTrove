@@ -18,7 +18,7 @@ const PlaylistVideos = () => {
   const getAllVideo = isPlaylistVideo?.videos;
 
   return (
-    <div className="playlist-container middle-content">
+    <div className="playlist-viideo-container shared-container  middle-content">
       <header className="playlist-header">
         <h1 className="playlist-title">
           {isPlaylistVideo?.title} ({getAllVideo?.length})
@@ -36,7 +36,7 @@ const PlaylistVideos = () => {
         <p className="empty-playlist-message">No Video Here,Please Add. 😊</p>
       )}
 
-      <div className="video-container">
+      <div className="shared-video-container">
         {getAllVideo?.map((eachVideo) => (
           <PlayListVideoCard key={eachVideo._id} video={eachVideo} />
         ))}

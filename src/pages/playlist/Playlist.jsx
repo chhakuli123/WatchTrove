@@ -21,7 +21,7 @@ const Playlist = () => {
 
   return (
     <>
-      <div className="playlist-container middle-content">
+      <div className="shared-container middle-content">
         <header className="playlist-header">
           <h1 className="playlist-title">Playlist ({playlists?.length})</h1>
 
@@ -40,7 +40,7 @@ const Playlist = () => {
           </p>
         )}
 
-        <div className="playlist-wrapper">
+        <div className="shared-video-container">
           {playlists?.map((eachPlaylist) => (
             <PlayListCard eachPlaylist={eachPlaylist} key={eachPlaylist._id} />
           ))}

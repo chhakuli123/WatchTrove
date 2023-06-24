@@ -31,14 +31,14 @@ const PlaylistModal = ({ video, setCreatePlaylistModal, playlists }) => {
             return data.videos.find(
               (eachVideo) => eachVideo._id === video._id
             ) ? (
-              <button className="created-playlist">
+              <button key={data._id} className="created-playlist">
                 <PlaylistAddOutlinedIcon className="icons tools-icon icon-circle-plus" />
                 {data.title}
               </button>
             ) : (
               <button
-                className="created-playlist"
                 key={data._id}
+                className="created-playlist"
                 onClick={() => addToPlayList(data, video)}
               >
                 <PlaylistAddOutlinedIcon className="icons tools-icon icon-circle-plus" />

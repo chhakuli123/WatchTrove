@@ -4,7 +4,6 @@ import { useNavigate } from "react-router";
 import { useLikesContext } from "context";
 import { VideoCallOutlinedIcon } from "asset";
 import { LikedVideoCard } from "components";
-import "./likes.css";
 
 const Likes = () => {
   const {
@@ -14,25 +13,28 @@ const Likes = () => {
 
   return (
     <>
-      <div className="likes-container middle-content">
-        <header className="likes-container-header">
-          <h1 className="text-md">Liked Video ({likedVideo.length})</h1>
-          {likedVideo?.length === 0 && (
-            <>
-              <h3>There is no Liked video. <br /> Please Explore and Add 😊</h3>
-              <div className="hero-btn-container">
-                <button
-                  className="hero-btn-explore"
-                  onClick={() => navigate("/explore")}
-                >
-                  <VideoCallOutlinedIcon style={{ fontSize: "2rem" }} />
-                  Explore
-                </button>
-              </div>
-            </>
-          )}
+      <div className="likes-container shared-container middle-content">
+        <header className="likes-container-header playlist-header">
+          <h1 className="likes-title playlist-title">
+            Liked Video ({likedVideo.length})
+          </h1>
+
+          <button
+            className="clear-history-btn playlist-add-button"
+            onClick={() => navigate("/explore")}
+          >
+            <VideoCallOutlinedIcon className="icons playlist-add-icon" />
+            Explore
+          </button>
         </header>
-        <div className="video-container">
+
+        {likedVideo?.length === 0 && (
+          <p className="empty-playlist-message">
+            There is no Liked video,Please Explore and Add 😊
+          </p>
+        )}
+
+        <div className="shared-video-container">
           {likedVideo?.map((eachVideo) => (
             <LikedVideoCard key={eachVideo?._id} video={eachVideo} />
           ))}
