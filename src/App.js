@@ -4,12 +4,12 @@ import { Toaster } from "react-hot-toast";
 import {
   Explore,
   Home,
-  Likes,
   VideoWatchPage,
   WatchLater,
   Playlist,
   PlaylistVideos,
   History,
+  Likes,
 } from "pages";
 import {
   Footer,
