@@ -1,8 +1,8 @@
-.playlist-container {
+/* .playlist-container {
   margin-left: 12.2rem;
-  padding: 2rem;
+  padding: 1rem;
   color: var(--white-text);
-}
+} */
 
 .playlist-header {
   display: flex;
@@ -18,8 +18,9 @@
 .playlist-add-button {
   display: flex;
   align-items: center;
-  background-color: var(--primary-color);
-  border: none;
+  background-color: var(--white-text);
+  color: var(--background-color);
+  border: 1px solid var(--background-color);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
@@ -29,8 +30,9 @@
 }
 
 .playlist-add-button:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--background-color);
   color: var(--white-text);
+  border: 1px solid var(--white-text);
 }
 
 .empty-playlist-message {
@@ -139,6 +141,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem 0;
 }
 
 @media screen and (max-width: 767px) {

@@ -31,7 +31,7 @@
   font-size: 2rem;
 }
 
-input:focus {
+input {
   outline: none;
   color: var(--white-text);
 }
@@ -54,7 +54,7 @@ input:focus {
   width: 100%;
 }
 
-.topbar-search .search-icon {
+.search-icon {
   color: var(--white-text);
 }
 
@@ -64,34 +64,44 @@ input:focus {
 }
 
 .topbar-icons svg {
-  margin-left: 1rem;
-  font-size: 1.8rem;
+  margin-left: 0.6rem;
+  font-size: 2rem;
   color: var(--white-text);
+}
+.mobile-search-container {
+  display: none;
 }
 
 @media screen and (max-width: 767px) {
   .topbar {
-    padding: 1.1rem 0.2rem;
-  }
-
-  .topbar-logo-image {
-    height: 1.7rem;
-    margin: 0 0.2rem;
-  }
-
-  .topbar-logo-text {
-    font-size: 1.2rem;
+    padding: 1.1rem 0.4rem;
+    border: none;
   }
 
   .topbar-search {
-    margin-left: 0.5rem;
-    width: 75%;
-    height: 1rem;
-    padding: 0.5rem;
+    display: none;
   }
+  .mobile-search-container {
+    background-color: var(--background-color);
+    display: flex;
+    padding-bottom: 0.8rem;
+  }
+  .mobile-search {
+    display: flex;
 
-  .topbar-icons svg {
-    margin-left: 0.2rem;
-    font-size: 1.7rem;
+    border-radius: 1rem;
+    margin: 0 0.4rem;
+    border: 1px solid var(--primary-color);
+    align-items: center;
+    height: 1.7rem;
+    padding: 0.3rem;
+    width: 95%;
+  }
+  .mobile-search-container input {
+    background-color: transparent;
+    border: none;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    width: 100%;
   }
 }
