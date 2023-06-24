@@ -50,7 +50,7 @@ export const addItemToWatchLaterVideos = function (schema, request) {
         409,
         {},
         {
-          errors: ["The video is already in your liked videos"],
+          errors: ["The video is already in your watchLater videos"],
         }
       );
     }
