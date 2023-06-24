@@ -38,7 +38,7 @@ export const PlayListContextProvider = ({ children }) => {
             });
           }
         } catch (error) {
-          toast.error(error);
+          console.log(error.message);
         }
       })();
     } else {
@@ -72,7 +72,7 @@ export const PlayListContextProvider = ({ children }) => {
             playlistDispatch({ type: "CREATE_PLAYLIST", payload: playlists });
           }
         } catch (error) {
-          toast.error(error);
+          console.log(error.message);
         }
       }
     }
@@ -98,7 +98,7 @@ export const PlayListContextProvider = ({ children }) => {
         toast.success(`Video Added to Playlist ${playlist.title}`);
       }
     } catch (error) {
-      toast.error(error);
+      console.log(error.message);
     }
   };
 
@@ -116,7 +116,7 @@ export const PlayListContextProvider = ({ children }) => {
         playlistDispatch({ type: "DELETE_PLAYLISTS", payload: playlists });
       }
     } catch (error) {
-      toast.error(error);
+      console.log(error.message);
     }
   };
 
@@ -137,7 +137,7 @@ export const PlayListContextProvider = ({ children }) => {
         });
       }
     } catch (error) {
-      toast.error(error);
+      console.log(error.message);
     }
   };
 

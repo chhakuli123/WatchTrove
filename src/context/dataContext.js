@@ -14,22 +14,22 @@ const DataContext = createContext();
 const DataContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(
-    () =>
-      (async () => {
-        const respVideos = await getVideos();
-        dispatch({
-          type: "SET_VIDEOS",
-          payload: { videos: respVideos.videos },
-        });
-        const respCategories = await getCategories();
-        dispatch({
-          type: "SET_CATEGORIES",
-          payload: { categories: respCategories.categories },
-        });
-      })(),
-    []
-  );
+  useEffect(() => {
+    const fetchData = async () => {
+      const respVideos = await getVideos();
+      dispatch({
+        type: "SET_VIDEOS",
+        payload: { videos: respVideos.videos },
+      });
+      const respCategories = await getCategories();
+      dispatch({
+        type: "SET_CATEGORIES",
+        payload: { categories: respCategories.categories },
+      });
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <DataContext.Provider value={{ state, dispatch }}>

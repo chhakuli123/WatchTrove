@@ -1,5 +1,5 @@
-import axios from "axios";
 import { createContext, useContext, useState } from "react";
+import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
         localStorage.setItem("Signup-Token", encodedToken);
       }
     } catch (error) {
-      toast.error(error.message);
+      console.log(error);
     }
   };
 
