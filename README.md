@@ -36,3 +36,8 @@ $ npm start
 ## Live Link
 [WatchTrove](https://watch-trove.netlify.app/) 🚀
 
+## Live Demo
+https://github.com/chhakuli123/WatchTrove/assets/103095813/bec7fafd-55d3-4d0c-ba91-927b005a874f
+
+
+
