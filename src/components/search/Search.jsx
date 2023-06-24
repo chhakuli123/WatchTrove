@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useData } from "context";
+import { useAuth, useData, useHistoryContext } from "context";
 import { YoutubeSearchedForIcon } from "asset";
 import "./search.css";
 
@@ -11,6 +11,8 @@ const Search = ({ searchQuery, setShowSearchResult, inputRef }) => {
   const {
     state: { videos },
   } = useData();
+  const { isAuth } = useAuth();
+  const { addHistoryVideo } = useHistoryContext();
 
   const filteredVideos = [...videos]?.filter(
     (eachVideo) =>
@@ -18,9 +20,12 @@ const Search = ({ searchQuery, setShowSearchResult, inputRef }) => {
       eachVideo.categoryName.toLowerCase().includes(searchQuery.query.toLowerCase())
   );
 
-  const handleSingleVideo = (_id) => {
+  const handleSingleVideo = (eachVideo) => {
     inputRef.current.value = "";
-    navigate(`/watchpage/${_id}`);
+    navigate(`/watchpage/${eachVideo._id}`);
+    if(isAuth){
+      addHistoryVideo(eachVideo);
+    }
     setShowSearchResult(false);
   };
 
@@ -36,7 +41,7 @@ const Search = ({ searchQuery, setShowSearchResult, inputRef }) => {
             <div
               className="searched-item"
               key={i}
-              onClick={() => handleSingleVideo(eachVideo._id)}
+              onClick={() => handleSingleVideo(eachVideo)}
             >
               <div className="searched-item-icon">
                 <YoutubeSearchedForIcon />
